@@ -1721,11 +1721,7 @@ function ft_settings_load() {
  * @return The filtered string.
  */
 function ft_stripslashes($string) {
-  if (get_magic_quotes_gpc()) {
-    return stripslashes($string);
-  } else {
-    return $string;
-  }
+  return $string;
 }
 
 /**
