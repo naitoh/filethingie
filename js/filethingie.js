@@ -93,13 +93,6 @@
     			if ($(this).parent().parent().hasClass('file')) {
   			    actions.duplicate = options.duplicate_link;
   			  }
-  			  // Add unzip.
-  			  if (
-  			    $(this).parent().parent().find("td.name").text().substr(
-  			      $(this).parent().parent().find("td.name").text().lastIndexOf(".")+1
-  			    ).toLowerCase() == 'zip') {
-  			    actions.unzip = options.unzip_link;
-  			  }
   			  // Add chmod and symlink.
   			  if (options.advancedactions == 'true') {
   			    actions.chmod = options.chmod_link;
@@ -199,28 +192,20 @@
   			label.append(options.del);
 			}
 			submit.val(options.del_button);
-  		act.val('delete');
-		} else if (section.match('unzip')) {
-  		// Hide new value field.
-  		newval.hide();
-  		label.empty();
-  		label.append(options.unzip);
-  		submit.val(options.unzip_button);
-  		submit.show();
-  		act.val('unzip');
-    } else {
-      // See if plugin has defined this section.
-      if (options.fileactions[section]) {
-        if (options.fileactions[section].type == 'sendoff') {
-           // Simple sendoff. Hide new value field.
-           newval.hide();
-           label.empty();
-           label.append(options.fileactions[section].text);
-           submit.val(options.fileactions[section].button)
-           act.val(section);
-        }
-      }
-    }
+  			act.val('delete');
+    	} else {
+      		// See if plugin has defined this section.
+      		if (options.fileactions[section]) {
+				if (options.fileactions[section].type == 'sendoff') {
+					// Simple sendoff. Hide new value field.
+					newval.hide();
+					label.empty();
+					label.append(options.fileactions[section].text);
+					submit.val(options.fileactions[section].button)
+					act.val(section);
+				}
+      		}
+    	}
 	};
 	/** 
    * Search functions.
