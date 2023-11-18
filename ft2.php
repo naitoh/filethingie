@@ -592,24 +592,6 @@ function ft_do_action() {
 			  ft_set_message(t("Upload failed."), 'error');
 				ft_redirect("dir=".$_REQUEST['dir']);
 			}
-    # Unzip
-    } elseif ($_REQUEST['act'] == "unzip" && ft_check_fileactions() === TRUE) {
-			// Check that file is set.
-			$file = ft_stripslashes($_REQUEST['file']);
-			if (!empty($file) && ft_check_file($file) && ft_check_filetype($file) && strtolower(ft_get_ext($file)) == 'zip' && is_file(ft_get_dir()."/".$file)) {
-			  $escapeddir = escapeshellarg(ft_get_dir()."/");
-			  $escapedfile = escapeshellarg(ft_get_dir()."/".$file);
-				if (!@exec("unzip -n ".$escapedfile." -d ".$escapeddir)) {
-          ft_set_message(t("!old could not be unzipped.", array('!old' => $file)), 'error');
-					ft_redirect("dir={$_REQUEST['dir']}");
-				} else {
-          ft_set_message(t("!old unzipped.", array('!old' => $file)));
-					ft_redirect("dir={$_REQUEST['dir']}");
-				}
-			} else {
-        ft_set_message(t("!old could not be unzipped.", array('!old' => $file)), 'error');
-				ft_redirect("dir={$_REQUEST['dir']}");
-			}
     # chmod
     } elseif ($_REQUEST['act'] == "chmod" && ft_check_fileactions() === TRUE && ADVANCEDACTIONS == TRUE) {
 			// Check that file is set.
@@ -1872,7 +1854,6 @@ if (headers_sent()) {
 		  move_link: "<?php echo t('Move');?>",
 		  del_link: "<?php echo t('Delete');?>",
 		  duplicate_link: "<?php echo t('Duplicate');?>",
-		  unzip_link: "<?php echo t('Unzip');?>",
 		  chmod_link: "<?php echo t('chmod');?>",
 		  symlink_link: "<?php echo t('Symlink');?>",
 		  rename: "<?php echo t('Rename to:');?>",
@@ -1881,8 +1862,6 @@ if (headers_sent()) {
       del_warning: "<?php echo t('You can only delete empty folders.');?>",
       del_button: "<?php echo t('Yes, delete it');?>",
       duplicate: "<?php echo t('Duplicate to file:');?>",
-      unzip: "<?php echo t('Do you really want to unzip file?');?>",
-      unzip_button: "<?php echo t('Yes, unzip it');?>",
       chmod: "<?php echo t('Set permissions to:');?>",
       symlink: "<?php echo t('Create symlink called:');?>",
 		  directory: "<?php if (!empty($_REQUEST['dir'])) {echo $_REQUEST['dir'];}?>",

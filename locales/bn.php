@@ -53,8 +53,6 @@
 	$ft_messages['bn']['!old was saved.'] = '!old কে সংরক্ষণ করা হয়েছে!';
 	$ft_messages['bn']['!old could not be edited.'] = '!old কে এডিট করা যাবে না';
 	$ft_messages['bn']['Could not edit file. This file type is not editable.'] = 'ফাইল এডিট করা সম্ভব নয়, অনুমতি পাওয়া যায়নি';
-	$ft_messages['bn']['!old unzipped.'] = '!old কে আনজিপ করা হয়েছে!';
-	$ft_messages['bn']['!old could not be unzipped.'] = '!old কে আনজিপ করা সম্ভব হয়নি';
 	$ft_messages['bn']['Permissions changed for !old.'] = '!old এর জন্য পারমিশন বদলে ফেলা হয়েছে';
 	$ft_messages['bn']['Could not change permissions for !old.'] = '!old এর জন্য পারমিশন পরিবর্তন করা সম্ভব হয়নি';
 	$ft_messages['bn']['File couldn\'t be moved'] = 'ফাইলকে সরানো সম্ভব হয়নি';
@@ -96,7 +94,6 @@
 	$ft_messages['bn']['Move'] = 'স্থানান্তর';
 	$ft_messages['bn']['Delete'] = 'মুছে ফেলা';
 	$ft_messages['bn']['Duplicate'] = 'ডুপ্লিকেইট তৈরি';
-	$ft_messages['bn']['Unzip'] = 'আনজিপ';
 	$ft_messages['bn']['chmod'] = 'অনুমতি পরিবর্তন';
 	$ft_messages['bn']['Rename to:'] = 'নতুন নামকরণ:';
 	$ft_messages['bn']['Edit'] = 'এডিট';
@@ -111,8 +108,6 @@
 	$ft_messages['bn']['Yes, delete it'] = 'নি:সন্দেহে';
 	$ft_messages['bn']['Do you want to edit this file?'] = 'ফাইলটি এডিট করতে চাচ্ছেন?';
 	$ft_messages['bn']['Yes, edit file'] = 'অবশ্যই';
-	$ft_messages['bn']['Do you really want to unzip file?'] = 'আসলেই ফাইল আনজিপ করতে চাচ্ছেন?';
-	$ft_messages['bn']['Yes, unzip it'] = 'অবশ্যই';
 	$ft_messages['bn']['Cancel upload of this file'] = 'আপলোড বাতিল করুন';
 	$ft_messages['bn']['Logged in as !user '] = '!user হিসেবে লগিন করা হয়েছে।';
 	$ft_messages['bn']['folders'] = 'টি ফোল্ডার';
