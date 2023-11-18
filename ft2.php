@@ -662,7 +662,8 @@ function ft_do_action() {
  */
 function ft_get_bytes($val) {
 	$val = trim($val);
-	$last = strtolower($val{strlen($val)-1});
+	$last = strtolower($val[strlen($val)-1]);
+	$val = (int)$val;
 	switch($last) {
 		// The 'G' modifier is available since PHP 5.1.0
 		case 'g':
@@ -1556,7 +1557,7 @@ function ft_sanitize_request() {
 	}
 	// If 'dir' is set to just / it is a security risk.
 	if (trim($_REQUEST['dir']) == '/') {
-	  unset($_REQUEST['dir']);
+        $_REQUEST['dir'] = "";
   }
 	// Nuke slashes from 'file' and 'newvalue'
 	if (!empty($_REQUEST['file'])) {
@@ -1720,11 +1721,7 @@ function ft_settings_load() {
  * @return The filtered string.
  */
 function ft_stripslashes($string) {
-  if (get_magic_quotes_gpc()) {
-    return stripslashes($string);
-  } else {
-    return $string;
-  }
+  return $string;
 }
 
 /**
