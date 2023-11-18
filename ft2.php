@@ -1557,7 +1557,7 @@ function ft_sanitize_request() {
 	}
 	// If 'dir' is set to just / it is a security risk.
 	if (trim($_REQUEST['dir']) == '/') {
-	  unset($_REQUEST['dir']);
+        $_REQUEST['dir'] = "";
   }
 	// Nuke slashes from 'file' and 'newvalue'
 	if (!empty($_REQUEST['file'])) {
