@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  app:
+    #container_name: app
+    build: .
+    ports:
+     - "80:80"
+    environment:
+      PATH: ${PATH}:/usr/local/bin:/root/.composer/vendor/bin
+    volumes:
+      - .:/var/www/html
+

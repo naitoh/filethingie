@@ -1738,6 +1738,11 @@ function t($msg, $vars = array(), $js = FALSE) {
 
 # Plugins #
 
+# Stop here during unit testing. #
+if (defined('PHPUNIT_TESTING')) {
+  return;
+}
+
 # Set timezone if PHP version is larger than 5.10. #
 if (function_exists('date_default_timezone_set')) {
   date_default_timezone_set(date_default_timezone_get());
