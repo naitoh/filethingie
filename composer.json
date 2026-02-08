@@ -1,0 +1,7 @@
+{
+    "name": "naitoh/filethingie",
+    "description": "File Thingie - A web-based file manager",
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    }
+}
